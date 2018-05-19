@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "./wwwroot/js",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "lib": ["es6", "dom", "es2017"],
+        "target": "es5",
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "jsx": "react",
+        "allowJs": true
+    },
+    "include": [
+        "./React/**/*"
+    ]
+}
