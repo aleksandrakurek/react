@@ -1,5 +1,5 @@
 import { CarClass } from "./EnumTypes/CarTypes";
-import { IObserver } from '../Models/IObserver'
+import { IObserver } from './IObserver';
 
 export class Car {
     private _carClass: CarClass;
@@ -7,7 +7,6 @@ export class Car {
     private _price: number;
     private _available: boolean;
     public id: number;
-    // public protected
     protected _observerList: Array<IObserver>;
 
     constructor(id: number, name: string, carClass: CarClass, price: number, available: boolean = true) {
@@ -18,7 +17,6 @@ export class Car {
         this.id = id;
         this._observerList = new Array<IObserver>();
     }
-
 
     public get carClass(): CarClass {
         return this._carClass;
@@ -56,14 +54,14 @@ export class Car {
     }
 
     public attach(observer: IObserver): void {
-        if(!this._observerList.includes(observer)) {
+        if (!this._observerList.includes(observer)) {
             this._observerList.push(observer);
         }
     }
 
     public detach(observer: IObserver): void {
         this._observerList.forEach((item, index) => {
-            if(JSON.stringify(item) == JSON.stringify(observer)) {
+            if (JSON.stringify(item) == JSON.stringify(observer)) {
                 this._observerList.splice(index, 1);
             }
         })

@@ -8,6 +8,7 @@ import Cars from './Components/Cars';
 import CarsOffers from './Components/CarsOffers';
 import Car from './Components/Car';
 import Layout from './Components/Layout';
+import Zadanie5 from './Components/Zadanie5';
 
 ReactDOM.render(
     <Router>
@@ -17,6 +18,7 @@ ReactDOM.render(
                 <Route exact path='/cars' component={Cars} />
                 <Route exact path='/cars/carsOffers' component={CarsOffers} />
                 <Route exact path='/cars/:carId' component={Car} />
+                <Route exact path='/zadanie5' component={Zadanie5} />
                 <Route component={E404} />
             </Switch>
         </Layout>

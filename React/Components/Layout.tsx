@@ -19,6 +19,7 @@ export class Home extends React.Component<HomeProps> {
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/cars'>Wynajem</NavLink></li>
             <li><NavLink to='/cars/carsOffers'>Oferty</NavLink></li>
+            <li><NavLink to='/zadanie5'>Zadanie5</NavLink></li>
         </ul>
     }
 }
