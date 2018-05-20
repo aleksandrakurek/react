@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ComponentType, H1Component, SpanComponent, BannerCComponent} from "../Models/ComponentModel"
+import { ComponentType, H1Component, SpanComponent, BannerCComponent} from "../Models/"
 
 type Props = {
    type: string;
