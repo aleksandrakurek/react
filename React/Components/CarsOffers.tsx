@@ -2,6 +2,7 @@ import * as React from "react";
 import CarsRepository from "../Repositories/CarsRepository"
 import Offer from "./Offer"
 import { Car } from '../Models/CarModel';
+import PageService from '../Services/PageService'
 
 
 type Props = {
@@ -11,30 +12,41 @@ type Props = {
 
 type State= {
     error:string;
-
+    render: boolean;
 }
 
 export default class CarsOffers extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
-        this.state= { error: undefined }
+        this.state= { error: undefined, render: false }
     }
 
     private book(car: Car):void {
         this.setState({ error: car.book()? undefined : "Juz jest zarezerwowany"})
-
     }
+
+    public scroll(): void  {
+        PageService.scrollTo(this);
+    }
+
+    public componentDidMount(): void {
+        CarsRepository.getCars().then((response) => {
+            this.setState({render : true});
+        })
+    }
+
     public render() {
         return (
-            <div> Oferty:
+            <div> 
+            <button type="button" onClick={this.scroll.bind(this)}>W dół </button>
+        Oferty:
             {this.state.error && <p>{this.state.error}</p>}
-            {CarsRepository.cars.map((car,index) => {
+            {this.state.render && CarsRepository.cars.map((car,index) => {
                    return <Offer 
                         key={index} 
                         car={car} 
                         history={this.props.history}
-                        action={this.book.bind(this, car)}
-                         />
+                        action={this.book.bind(this, car)} />
                })  }
             </div>
         );

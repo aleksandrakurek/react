@@ -1,0 +1,32 @@
+{
+    "cars": [
+        {
+            "id": 23,
+            "name": "Ford",
+            "carClass": "A",
+            "price": 45666,
+            "available": true
+        },
+        {
+            "id": 24,
+            "name": "Peugeot",
+            "carClass": "E",
+            "price": 45666,
+            "available": true
+        },
+        {
+            "id": 45,
+            "name": "Fiat",
+            "carClass": "C",
+            "price": 45666,
+            "available": true
+        },
+        {
+            "id": 50,
+            "name": "Ford",
+            "carClass": "A+",
+            "price": 45666,
+            "available": true
+        }
+    ]
+}

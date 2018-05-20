@@ -4,12 +4,12 @@ type Props = {
     match: any;
 }
 
-export default class Cars extends React.Component<Props> {
+export default class Home extends React.Component<Props> {
     public render() {
         console.log(this.props.match);
         return (
             <div>
-                Cars Homepage
+                ReactTS APP v {process.env.APP_VERSION}
             </div>
         );
     }

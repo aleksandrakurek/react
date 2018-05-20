@@ -9,7 +9,7 @@ export default class Cars extends React.Component<Props> {
         console.log(this.props.match);
         return (
             <div>
-                  To jest component CarId
+                Cars Homepage
             </div>
         );
     }

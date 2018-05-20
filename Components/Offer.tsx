@@ -2,7 +2,7 @@ import * as React from "react";
 import CarsRepository from "../Repositories/CarsRepository";
 import { Car } from '../Models/CarModel';
 import * as Dictionary from '../Services/Dictionary';
-import { IObserver } from '../Models/IObserver'
+import { IObserver } from '../Models/IObserver';
 
 type Props = {
     car: Car;
@@ -16,16 +16,16 @@ export default class Offer extends React.Component<Props> implements IObserver {
     }
 
     public update(car: any): void {
-        alert(`Pojazd ${car.name} zmienił status na dostępny`)
+        alert(`Pojazd ${car.name} zmienił status na dostępny`);
     }
 
     private observe(): void {
         this.props.car.attach(this);
     }
 
-    private finishReservation():void {
-    this.props.car.finishReservation();
-    this.forceUpdate();
+    private finishReservation(): void {
+        this.props.car.finishReservation();
+        this.forceUpdate();
     }
 
     public render() {
@@ -41,10 +41,10 @@ export default class Offer extends React.Component<Props> implements IObserver {
                 <button type="button"
                     onClick={this.redirect.bind(this)}>
                     Szczegóły</button>
-                    {!this.props.car.available && <button type="button"
+                {!this.props.car.available && <button type="button"
                     onClick={this.finishReservation.bind(this)}>
-                    Zakończ Rezerwacje</button>}
-                    {!this.props.car.available && <button type="button"
+                    Zakończ Rez.</button>}
+                {!this.props.car.available && <button type="button"
                     onClick={this.observe.bind(this)}>
                     Obserwuj</button>}
             </div>

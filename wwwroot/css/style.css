@@ -1,14 +1,15 @@
 ul{
-    padding-left:0;
-    border-bottom:1px solid grey;
-}
-li{
-    display: inline-block;
-    padding:20px 10px;
+padding-left:0;
+border-bottom:1px solid grey;
 }
 
-a, a:active, a:focus{
-    color:black;
+li{
+    display: inline-block;
+}
+
+li a{
+    color: black;
+    padding: 20px 10px;
     text-decoration: none;
     text-transform: uppercase;
 }
